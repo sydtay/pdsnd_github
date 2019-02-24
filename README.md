@@ -1,15 +1,18 @@
 ### Date created
-Include the date you created this project and README file.
+Created on February 21 2019
 
 ### Project Title
-Replace the Project Title
+Bikeshare Data
 
 ### Description
-Describe what your project is about and what it does
+Allows the user to input data about which city, Chicago, New York City, or Washington, the user would like to see.  Displays useful statistics on the bike share program in that city.
 
 ### Files used
-Include the files used
+Bikeshare.py
+washington.csv
+chicago.csv
+new_york_city.csv
+
 
 ### Credits
-It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
-
+All information can be found in the Udacity Nanodegree program.
