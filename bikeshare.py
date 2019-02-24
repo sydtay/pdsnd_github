@@ -2,10 +2,12 @@ import time
 import pandas as pd
 import numpy as np
 
+######The following are csv files containing raw data for each of the cities programs
 CITY_DATA = { 'chicago': 'chicago.csv',
               'new york city': 'new_york_city.csv',
               'washington': 'washington.csv' }
 
+######Allows the user to input parameters for the statistics to be filtered by
 def get_filters():
 
     print('Hello! Let\'s explore some US bikeshare data!')
@@ -40,6 +42,7 @@ def get_filters():
     print('-'*40)
     return city, month, day
 
+######Puts the data into a useable format
 def load_data(city, month, day):
     df = pd.read_csv(CITY_DATA[city])
     # convert the Start Time column to datetime
@@ -60,6 +63,7 @@ def load_data(city, month, day):
         df = df[df['day_of_week'] == day.title()]
     return df
 
+#######Returns time statistics to the users based on input from fitlers
 def time_stats(df):
     """Displays statistics on the most frequent times of travel."""
 
@@ -96,6 +100,7 @@ def station_stats(df):
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
+######Returns trip duration statistics based on user fitlers
 def trip_duration_stats(df):
     """Displays statistics on the total and average trip duration."""
 
@@ -113,6 +118,7 @@ def trip_duration_stats(df):
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
+#####Returns user statistics based on the filters from user input
 def user_stats(df):
     """Displays statistics on bikeshare users."""
 
@@ -141,6 +147,7 @@ def user_stats(df):
         print("\nThis took %s seconds." % (time.time() - start_time))
         print('-'*40)
 
+#####Returns 5 lines of raw data at a time allowing user to see raw data
 def display_raw(df):
     response = input('Would you like to see more data? Please answer yes or no: ').lower()
     if response == 'yes':
