@@ -13,6 +13,7 @@ washington.csv
 chicago.csv
 new_york_city.csv
 
+All csv files will be located in the .gitignore file
 
 ### Credits
-All information can be found in the Udacity Nanodegree program.
+All information and templates for the python code was found in the udacity nanodegree program programming for data science.
