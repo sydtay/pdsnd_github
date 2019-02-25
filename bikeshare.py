@@ -10,10 +10,10 @@ CITY_DATA = { 'chicago': 'chicago.csv',
 ######Allows the user to input parameters for the statistics to be filtered by
 def get_filters():
 
-    print('Hello! Let\'s explore some US bikeshare data!')
+    print('Hello!! Let\'s explore some US bikeshare data!')
 
     cities = ['chicago','new york city','washington']
-    city = input("What city are you interested in: ").lower()
+    city = input("What city are you interested in hearing about: ").lower()
 
     while city not in cities:
         print("Oops! Please enter either Chicago, New York City, or Washington!")
@@ -67,7 +67,7 @@ def load_data(city, month, day):
 def time_stats(df):
     """Displays statistics on the most frequent times of travel."""
 
-    print('\nCalculating The Most Frequent Times of Travel...\n')
+    print('\nCalculating The Most Frequent Time of Travel...\n')
     start_time = time.time()
 
     # TO DO: display the most common start hour
@@ -78,7 +78,7 @@ def time_stats(df):
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
-def station_stats(df):
+def station_statistics(df):
     """Displays statistics on the most popular stations and trip."""
 
     print('\nCalculating The Most Popular Stations and Trip...\n')
@@ -134,15 +134,15 @@ def user_stats(df):
         print(genders)
         # TO DO: Display earliest, most recent, and most common year of birth
         earliest_yr = int(df['Birth Year'].min())
-        print("The earliest year of birth:", earliest_yr)
+        print("The earliest year of birth is:", earliest_yr)
 
         recent_yr = int(df['Birth Year'].max())
-        print("The most recent year of birth:", recent_yr)
+        print("The most recent year of birth is:", recent_yr)
 
         common_yr = int(df['Birth Year'].mode()[0])
-        print("The most common year of birth:", common_yr)
+        print("The most common year of birth is:", common_yr)
     except:
-        print("No gender or birth year available for Washington.")
+        print("Unfortunately, no gender or birth year available for Washington.")
     finally:
         print("\nThis took %s seconds." % (time.time() - start_time))
         print('-'*40)
@@ -161,16 +161,16 @@ def display_raw(df):
 
 def main():
     while True:
-        city, month, day = get_filters()
+        city, month, day = filters()
         df = load_data(city, month, day)
 
-        time_stats(df)
-        station_stats(df)
-        trip_duration_stats(df)
-        user_stats(df)
-        display_raw(df)
+        time_statistics(df)
+        station_statistics(df)
+        trip_duration_statistics(df)
+        user_statistics(df)
+        display_raw_data(df)
 
-        restart = input('\nWould you like to restart? Enter yes or no.\n')
+        restart = input('\nWould you like to restart with new filters? Please enter yes or no.\n')
         if restart.lower() != 'yes':
             break
 
