@@ -15,3 +15,4 @@ new_york_city.csv
 
 
 ### Credits
+All information and templates for the python code was found in the udacity nanodegree program programming for data science.
