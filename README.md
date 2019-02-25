@@ -15,4 +15,3 @@ new_york_city.csv
 
 
 ### Credits
-All information can be found in the Udacity Nanodegree program.
